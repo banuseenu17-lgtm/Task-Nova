@@ -891,3 +891,28 @@ body.dark-theme .task-actions button {
     grid-template-columns: 1fr;
   }
 }
+/* Improve text visibility and readability */
+main p,
+main small,
+.main-content p,
+.section-subtitle,
+.section-description,
+.empty-state,
+.empty-state p,
+.productivity-overview p {
+    color: #475569 !important;
+    opacity: 1 !important;
+}
+
+/* Make secondary headings darker */
+main h2,
+main h3 {
+    color: #1e293b;
+}
+
+/* Improve footer visibility */
+footer,
+footer p {
+    color: #475569 !important;
+    opacity: 1 !important;
+}
