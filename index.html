@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b35">
+  <title>TaskNova | Smart Task Management</title>
+  <meta name="description" content="TaskNova - Your productivity, your progress, your success.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">✦</div>
+        <div>
+          <h2>TaskNova</h2>
+          <span>SMART PRODUCTIVITY</span>
+        </div>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">M</div>
+        <div>
+          <h4 id="profileName">Manoj</h4>
+          <p>Personal Workspace</p>
+        </div>
+      </div>
+
+      <p class="menu-heading">WORKSPACE</p>
+
+      <nav class="navigation">
+        <a href="#dashboard" class="nav-link active">
+          <span>▦</span> Dashboard
+        </a>
+        <a href="#tasks" class="nav-link">
+          <span>✓</span> My Tasks
+        </a>
+        <a href="#board" class="nav-link">
+          <span>▤</span> Kanban Board
+        </a>
+        <a href="#tasks" class="nav-link">
+          <span>◷</span> Upcoming
+        </a>
+      </nav>
+
+      <p class="menu-heading">PREFERENCES</p>
+
+      <nav class="navigation">
+        <a href="#settings" class="nav-link" id="themeButton">
+          <span>☾</span> Toggle Theme
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="upgrade-card">
+          <div class="upgrade-icon">✧</div>
+          <h3>Stay focused!</h3>
+          <p>Small progress every day leads to big achievements.</p>
+        </div>
+        <p class="version">TASKNOVA v1.0</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="dashboard">
+
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <div>
+          <p class="breadcrumb">Workspace / Dashboard</p>
+          <h2>Overview</h2>
+        </div>
+        <div class="topbar-right">
+          <div class="today-date" id="todayDate"></div>
+          <div class="top-avatar">M</div>
+        </div>
+      </header>
+
+      <section class="welcome-section">
+        <div>
+          <p class="eyebrow">YOUR PRODUCTIVITY SPACE</p>
+          <h1>Welcome back, <span id="welcomeName">Manoj</span>! 👋</h1>
+          <p>Make today count. Every task brings you closer to your goals.</p>
+        </div>
+        <div class="welcome-art">🚀</div>
+      </section>
+
+      <!-- STATISTICS -->
+      <section class="stats-grid">
+
+        <div class="stat-card">
+          <div class="stat-top">
+            <span>Total Tasks</span>
+            <span class="stat-icon purple">▤</span>
+          </div>
+          <h2 id="totalTasks">0</h2>
+          <p>All your tasks</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-top">
+            <span>Completed</span>
+            <span class="stat-icon green">✓</span>
+          </div>
+          <h2 id="completedTasks">0</h2>
+          <p>Successfully finished</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-top">
+            <span>In Progress</span>
+            <span class="stat-icon blue">◷</span>
+          </div>
+          <h2 id="progressTasks">0</h2>
+          <p>Currently working on</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-top">
+            <span>Pending</span>
+            <span class="stat-icon orange">!</span>
+          </div>
+          <h2 id="pendingTasks">0</h2>
+          <p>Waiting to be started</p>
+        </div>
+
+      </section>
+
+      <!-- TASK SECTION -->
+      <section class="content-card" id="tasks">
+
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">STAY ORGANIZED</p>
+            <h2>My Tasks</h2>
+            <p>Manage your daily goals and priorities.</p>
+          </div>
+          <button class="primary-button" id="addTaskButton">
+            + Add New Task
+          </button>
+        </div>
+
+        <div class="task-controls">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search your tasks..."
+            aria-label="Search tasks"
+          >
+
+          <select id="filterStatus" aria-label="Filter by status">
+            <option value="all">All Status</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+
+          <select id="filterPriority" aria-label="Filter by priority">
+            <option value="all">All Priorities</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+
+        <div class="task-list" id="taskList">
+          <div class="empty-state">
+            <div>📝</div>
+            <h3>No tasks yet</h3>
+            <p>Add your first task and start being productive!</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- PRODUCTIVITY -->
+      <section class="content-card productivity-card" id="board">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">YOUR ACHIEVEMENTS</p>
+            <h2>Productivity Overview</h2>
+            <p>Track your progress and keep moving forward.</p>
+          </div>
+          <div class="progress-circle" id="progressCircle">
+            <span id="progressPercentage">0%</span>
+          </div>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <p class="progress-message" id="progressMessage">
+          Your productivity journey starts here!
+        </p>
+      </section>
+
+      <footer class="footer" id="settings">
+        <p>Made with ♥ by Manoj | TaskNova © 2026</p>
+        <p>Stay focused. Stay productive. ✨</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- ADD / EDIT TASK MODAL -->
+  <div class="modal-overlay" id="taskModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">TASK MANAGEMENT</p>
+          <h2 id="modalTitle">Create New Task</h2>
+        </div>
+        <button class="close-button" id="closeModal">×</button>
+      </div>
+
+      <form id="taskForm">
+
+        <input type="hidden" id="editTaskId">
+
+        <label for="taskTitle">Task Title</label>
+        <input
+          type="text"
+          id="taskTitle"
+          placeholder="Enter your task name"
+          required
+          maxlength="100"
+        >
+
+        <label for="taskDescription">Description</label>
+        <textarea
+          id="taskDescription"
+          placeholder="Describe your task..."
+          rows="3"
+        ></textarea>
+
+        <div class="form-row">
+          <div>
+            <label for="taskPriority">Priority</label>
+            <select id="taskPriority">
+              <option value="High">High</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="taskStatus">Status</label>
+            <select id="taskStatus">
+              <option value="Pending">Pending</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="taskDeadline">Due Date</label>
+        <input type="date" id="taskDeadline">
+
+        <button type="submit" class="primary-button submit-button">
+          Save Task
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
